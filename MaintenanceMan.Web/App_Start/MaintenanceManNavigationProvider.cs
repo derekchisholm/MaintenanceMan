@@ -20,14 +20,14 @@ namespace MaintenanceMan.Web
                         "Home",
                         new LocalizableString("HomePage", MaintenanceManConsts.LocalizationSourceName),
                         url: "#/",
-                        icon: "fa fa-home"
+                        icon: "icon-home"
                         )
                 ).AddItem(
                     new MenuItemDefinition(
                         "Tenants",
                         L("Tenants"),
                         url: "#tenants",
-                        icon: "fa fa-globe",
+                        icon: "icon-globe",
                         requiredPermissionName: PermissionNames.Pages_Tenants
                         )
                 ).AddItem(
@@ -35,7 +35,7 @@ namespace MaintenanceMan.Web
                         "Users",
                         L("Users"),
                         url: "#users",
-                        icon: "fa fa-users",
+                        icon: "icon-user",
                         requiredPermissionName: PermissionNames.Pages_Users
                         )
                 ).AddItem(
@@ -43,7 +43,7 @@ namespace MaintenanceMan.Web
                         "About",
                         new LocalizableString("About", MaintenanceManConsts.LocalizationSourceName),
                         url: "#/about",
-                        icon: "fa fa-info"
+                        icon: "icon-info"
                         )
                 );
         }

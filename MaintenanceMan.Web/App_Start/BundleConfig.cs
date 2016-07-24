@@ -13,12 +13,14 @@ namespace MaintenanceMan.Web
             //~/Bundles/App/vendor/css
             bundles.Add(
                 new StyleBundle("~/Bundles/App/vendor/css")
-                    .Include("~/Content/themes/base/all.css", new CssRewriteUrlTransform())
-                    .Include("~/Content/bootstrap-cosmo.min.css", new CssRewriteUrlTransform())
-                    .Include("~/Content/toastr.min.css", new CssRewriteUrlTransform())
-                    .Include("~/Scripts/sweetalert/sweet-alert.css", new CssRewriteUrlTransform())
-                    .Include("~/Content/flags/famfamfam-flags.css", new CssRewriteUrlTransform())
-                    .Include("~/Content/font-awesome.min.css", new CssRewriteUrlTransform())
+                    //.Include("~/Content/toastr.min.css", new CssRewriteUrlTransform())
+                    //.Include("~/Scripts/sweetalert/sweet-alert.css", new CssRewriteUrlTransform())
+                    //.Include("~/Content/flags/famfamfam-flags.css", new CssRewriteUrlTransform())
+                    //.Include("~/Content/font-awesome.min.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/global/plugins/font-awesome/css/font-awesome.min.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/global/plugins/simple-line-icons/simple-line-icons.min.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/global/plugins/bootstrap/css/bootstrap.min.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css", new CssRewriteUrlTransform())
                 );
 
             //~/Bundles/App/vendor/js
@@ -68,12 +70,19 @@ namespace MaintenanceMan.Web
             //~/Bundles/App/Main/css
             bundles.Add(
                 new StyleBundle("~/Bundles/App/Main/css")
+                    .Include("~/Content/themes/metronic/assets/global/css/components.min.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/global/css/plugins.min.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/layouts/layout2/css/layout.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/layouts/layout2/css/themes/dark.css", new CssRewriteUrlTransform())
+                    .Include("~/Content/themes/metronic/assets/layouts/layout2/css/custom.min.css", new CssRewriteUrlTransform())
                     .IncludeDirectory("~/App/Main", "*.css", true)
                 );
 
             //~/Bundles/App/Main/js
             bundles.Add(
                 new ScriptBundle("~/Bundles/App/Main/js")
+                    .Include("~/Content/themes/metronic/assets/global/scripts/app.js")
+                    .Include("~/Content/themes/metronic/assets/layouts/layout2/scripts/layout.js")
                     .IncludeDirectory("~/Common/Scripts", "*.js", true)
                     .IncludeDirectory("~/App/Main", "*.js", true)
                 );

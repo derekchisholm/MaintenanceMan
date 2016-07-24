@@ -1,0 +1,21 @@
+<div class="page-sidebar navbar-collapse collapse" ng-controller="app.views.layout.sidebar as vm">
+    <!-- BEGIN SIDEBAR MENU -->
+    <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+    <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+    <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+    <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+    <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+    <ul class="page-sidebar-menu page-sidebar-menu-compact" data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200">
+        <li ng-repeat="menuItem in vm.menu.items" ng-class="{active: vm.currentMenuName == menuItem.name}">
+            <a ng-if="!menuItem.items.length" ng-href="{{menuItem.url}}"><i class="{{menuItem.icon}}" ng-if="menuItem.icon"></i> {{menuItem.displayName}}</a>
+            <a ng-if="menuItem.items.length" href="" data-toggle="dropdown"><i class="{{menuItem.icon}}" ng-if="menuItem.icon"></i> {{menuItem.displayName}} </a>
+            <ul ng-if="menuItem.items.length" class="dropdown-menu">
+                <li ng-repeat="menuSubItem in menuItem.items">
+                    <a ng-href="{{menuSubItem.url}}"><i class="{{menuSubItem.icon}}" ng-if="menuSubItem.icon"></i> {{menuSubItem.displayName}}</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <!-- END SIDEBAR MENU -->
+</div>
